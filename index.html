@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poke API</title>
+    <link rel="stylesheet" href="./style/style.css" />
+    <link
+      rel="shortcut icon"
+      href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/512px-Pok%C3%A9_Ball_icon.svg.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <main class="main">
+      <header class="main__header">
+        <form action="">
+          <div class="input-wrapper">
+            <input
+              type="text"
+              class="input"
+              name="search"
+              placeholder="Search"
+            />
+
+            <button style="border: none; outline: none">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="input-icon"
+                viewBox="0 0 20 20"
+                fill="#48e"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
+        </form>
+        <h1 class="text__title__header">
+          <a href="./index.html" style="text-decoration: none; color: #000"
+            >PokeDex Pawww</a
+          >
+        </h1>
+      </header>
+      <article class="main__pokedex">
+        <div class="dialog__pokemon"></div>
+      </article>
+      <footer class="main__footer">
+        <h1 class="text__title__footer">Search Pokemon - Pawww</h1>
+        <p class="text__subtitle__footer">
+          Thanks
+          <a href="https://pokeapi.co/" class="link__pokeapi" target="BLANK"
+            >PokeAPI</a
+          >
+          for the Pokemon API
+        </p>
+      </footer>
+    </main>
+    <script src="./app/app.js"></script>
+  </body>
+</html>
