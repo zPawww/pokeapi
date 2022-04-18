@@ -106,6 +106,12 @@ form {
   max-height: 200px;
   height: 200px;
   cursor: pointer;
+  animation: pop 4s ease;
+  background: linear-gradient(rgb(212, 212, 212) 0%, rgb(255, 255, 255) 20%);
+}
+
+.pokemon:hover {
+  border: 2px solid #000;
 }
 
 .text__id__title {
@@ -150,3 +156,23 @@ form {
   font-weight: 500;
   margin-bottom: 30px;
 }
+
+@keyframes pop {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+    transition: 2s all ease;
+  }
+}
+
+@media (max-width: 500px) {
+  .main__pokedex {
+    grid-area: pokedex;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+}
+
