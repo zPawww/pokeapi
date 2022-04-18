@@ -1,18 +1,11 @@
 const div = document.querySelector('.main__pokedex');
 const form = document.querySelector('form');
 
-function showDialog() {
-  // Show Status Pokemon
-}
+function showDialog() {}
 
 const showPokemons = objeto => {
   const pokedex = objeto.map(pokemon => {
     div.innerHTML += `
-    <dialog>
-    <h1>Hola</h1>
-    <p>XD</p>
-    <button id="exit">Salir</button>
-    </dialog>
     <div class="pokemon" id="show" onclick="showDialog()">
     <h1 class="text__id__title">${pokemon.id}</h1>
     <p class="text__subtitle__pokemon">${pokemon.name}</p>
@@ -46,26 +39,30 @@ fetchPokemon();
 form.addEventListener('submit', e => {
   e.preventDefault();
   let target = e.target.search.value;
-  let value = target.toLowerCase();
-  const url = `https://pokeapi.co/api/v2/pokemon/${value}`;
-  fetch(url)
-    .then(res => res.json())
-    .then(data => {
-      const objeto = {
-        id: data.id,
-        name: data.name,
-        image: data.sprites.other.dream_world.front_default,
-      };
-      div.innerHTML = '';
-      div.innerHTML += `
-      <div class="pokemon">
-      <h1 class="text__id__title">${objeto.id}</h1>
-      <p class="text__subtitle__pokemon">${objeto.name}</p>
-      <img
-        src="${objeto.image}"
-        class="image__pokemon"
-      />
-    </div>
-      `;
-    });
+  let value = target.split(' ').join('').toLowerCase();
+  if (value == '') {
+    fetchPokemon();
+  } else {
+    const url = `https://pokeapi.co/api/v2/pokemon/${value}`;
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        const objeto = {
+          id: data.id,
+          name: data.name,
+          image: data.sprites.other.dream_world.front_default,
+        };
+        div.innerHTML = '';
+        div.innerHTML += `
+        <div class="pokemon">
+        <h1 class="text__id__title">${objeto.id}</h1>
+        <p class="text__subtitle__pokemon">${objeto.name}</p>
+        <img
+          src="${objeto.image}"
+          class="image__pokemon"
+        />
+      </div>
+        `;
+      });
+  }
 });
