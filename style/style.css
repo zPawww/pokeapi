@@ -174,5 +174,22 @@ form {
     flex-wrap: wrap;
     flex-direction: column;
   }
+
+  .text__title__header {
+    display: none;
+  }
+
+  form {
+    width: 90%;
+  }
+
+  .input {
+    width: 100%;
+    height: 100%;
+  }
+
+  .input-wrapper {
+    width: 100%;
+  }
 }
 
