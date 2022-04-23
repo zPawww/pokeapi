@@ -91,7 +91,7 @@ form {
 .main__pokedex {
   grid-area: pokedex;
   display: grid;
-  grid-template-columns: repeat(9, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   grid-template-rows: repeat(9, 1fr);
   grid-auto-rows: 1fr;
   background-color: #fff;
@@ -143,7 +143,7 @@ form {
 .main__footer {
   grid-area: footer;
   background-color: rgba(0, 0, 0, 0.063);
-  height: 120px;
+  height: 140px;
   padding: 20px;
 }
 
