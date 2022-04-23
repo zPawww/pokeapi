@@ -1,5 +1,9 @@
 const div = document.querySelector('.main__pokedex');
 const form = document.querySelector('form');
+const main = document.querySelector('.main');
+const spinner = document.querySelector('.box-spinner');
+spinner.style = 'display: block;';
+main.style = 'display: none;';
 
 function showDialog() {}
 
@@ -18,11 +22,11 @@ const showPokemons = objeto => {
   });
 };
 
-const fetchPokemon = () => {
+const fetchPokemon = async () => {
   const promises = [];
   for (let i = 1; i <= 153; i++) {
     const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
-    promises.push(fetch(url).then(res => res.json()));
+    promises.push(await fetch(url).then(res => res.json()));
   }
   Promise.all(promises).then(results => {
     const objeto = results.map(item => ({
@@ -31,6 +35,8 @@ const fetchPokemon = () => {
       image: item.sprites.other.dream_world.front_default,
     }));
     showPokemons(objeto);
+    spinner.style = 'display: none;';
+    main.style = 'display: block;';
   });
 };
 
