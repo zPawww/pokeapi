@@ -10,6 +10,14 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+.box-spinner {
+  width: 100px;
+  height: 100px;
+  margin: 20% auto;
+  background-color: rgb(74, 72, 203);
+  animation: spinner 3s infinite;
+}
+
 .main {
   display: grid;
   grid-template-areas:
@@ -106,7 +114,7 @@ form {
   max-height: 200px;
   height: 200px;
   cursor: pointer;
-  animation: pop 4s ease;
+  animation: pop 2s ease;
   background: linear-gradient(rgb(212, 212, 212) 0%, rgb(255, 255, 255) 20%);
 }
 
@@ -164,6 +172,15 @@ form {
   100% {
     opacity: 100%;
     transition: 2s all ease;
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 
